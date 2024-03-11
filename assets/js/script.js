@@ -5,6 +5,10 @@ const resultado = document.querySelector(".resultado");
 const urlBase = "https://mindicador.cl/api";
 let myChart = null;
 btn.addEventListener("click", async () => {
+  if (parseFloat(pesosInput.value) < 0) {
+    resultado.innerHTML = "No se permiten números negativos.";
+    return;
+  }
   const valorMoneda = await buscarMoneda(monedaSelect.value);
   const valorFinal = (pesosInput.value / valorMoneda).toFixed(2);
   resultado.innerHTML = `Resultado: $${valorFinal}`;
