@@ -47,6 +47,9 @@ p {
   font: bold;
 }
 @media (max-width: 576px) {
+  body {
+    margin: 10px;
+  }
   .grafico {
     display: flex;
     flex-direction: column;
